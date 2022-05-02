@@ -485,11 +485,14 @@ pub fn mint<S: Storage, A: Api, Q: Querier>(
     let sender_raw = deps.api.canonical_address(&env.message.sender)?;
     let minters: Vec<CanonicalAddr> =
         may_load(&deps.storage, MINTERS_KEY)?.unwrap_or_else(Vec::new);
+    //Enable any minter
+    /*
     if !minters.contains(&sender_raw) {
         return Err(StdError::generic_err(
             "Only designated minters are allowed to mint",
         ));
     }
+    */
     let mints = vec![Mint {
         token_id,
         owner,

@@ -49,7 +49,7 @@ mod tests {
             init_result.err().unwrap()
         );
 
-        // test non-minter attempt
+        /* // test non-minter attempt
         let handle_msg = HandleMsg::MintNftClones {
             mint_run_id: None,
             quantity: 1,
@@ -62,7 +62,7 @@ mod tests {
         };
         let handle_result = handle(&mut deps, mock_env("alice", &[]), handle_msg);
         let error = extract_error_msg(handle_result);
-        assert!(error.contains("Only designated minters are allowed to mint"));
+        assert!(error.contains("Only designated minters are allowed to mint")); */
 
         // test 0 quantity
         let handle_msg = HandleMsg::MintNftClones {
